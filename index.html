@@ -53,7 +53,7 @@
     </header>
 
     <main id="main-content">
-
+        
         <section class="hero-section" id="hero" aria-label="Hero Section">
             <div class="container hero-container">
                 <div class="hero-content">
@@ -351,7 +351,7 @@
                                 </div>
                                 <figcaption class="testimonial-body">
                                     <blockquote class="testimonial-quote">
-                                        <span class="quote-mark-open">â€œ</span>Mariam is a dedicated junior frontend developer who learns fast and writes clean, structured code. She built our landing page components quickly and showed great attention to responsive design.<span class="quote-mark-close">â€ž</span>
+                                        <span class="quote-mark-open">“</span>Mariam is a dedicated junior frontend developer who learns fast and writes clean, structured code. She built our landing page components quickly and showed great attention to responsive design.<span class="quote-mark-close">„</span>
                                     </blockquote>
                                     <cite class="testimonial-name">Sarah Jenkins</cite>
                                     <span class="testimonial-role">Frontend Team Lead</span>
@@ -366,7 +366,7 @@
                                 </div>
                                 <figcaption class="testimonial-body">
                                     <blockquote class="testimonial-quote">
-                                        <span class="quote-mark-open">â€œ</span>Great work ethic and enthusiasm. Mariam picked up our CSS workflow and layout structure with ease, delivering pixel-perfect and responsive results on every screen size.<span class="quote-mark-close">â€ž</span>
+                                        <span class="quote-mark-open">“</span>Great work ethic and enthusiasm. Mariam picked up our CSS workflow and layout structure with ease, delivering pixel-perfect and responsive results on every screen size.<span class="quote-mark-close">„</span>
                                     </blockquote>
                                     <cite class="testimonial-name">Michael Chang</cite>
                                     <span class="testimonial-role">Senior Developer</span>
@@ -381,7 +381,7 @@
                                 </div>
                                 <figcaption class="testimonial-body">
                                     <blockquote class="testimonial-quote">
-                                        <span class="quote-mark-open">â€œ</span>Mariam implemented our design mockups with impressive precision. She is proactive, asks thoughtful questions about UX details, and is a pleasure to collaborate with.<span class="quote-mark-close">â€ž</span>
+                                        <span class="quote-mark-open">“</span>Mariam implemented our design mockups with impressive precision. She is proactive, asks thoughtful questions about UX details, and is a pleasure to collaborate with.<span class="quote-mark-close">„</span>
                                     </blockquote>
                                     <cite class="testimonial-name">Elena Rostova</cite>
                                     <span class="testimonial-role">UI/UX Designer</span>
@@ -396,7 +396,7 @@
                                 </div>
                                 <figcaption class="testimonial-body">
                                     <blockquote class="testimonial-quote">
-                                        <span class="quote-mark-open">â€œ</span>A very reliable junior talent. Mariam respects project deadlines, communicates clearly, and takes feedback constructively to continuously improve her frontend skills.<span class="quote-mark-close">â€ž</span>
+                                        <span class="quote-mark-open">“</span>A very reliable junior talent. Mariam respects project deadlines, communicates clearly, and takes feedback constructively to continuously improve her frontend skills.<span class="quote-mark-close">„</span>
                                     </blockquote>
                                     <cite class="testimonial-name">David Miller</cite>
                                     <span class="testimonial-role">Project Coordinator</span>
@@ -463,8 +463,77 @@
                 </div>
             </div>
         </section>
-
     </main>
+
+    <footer class="site-footer">
+        <div class="container text-center">
+            <nav class="footer-nav-wrapper" aria-label="Footer Navigation">
+                <ul class="footer-nav">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-socials" role="group" aria-label="Footer social profiles">
+                <a href="https://www.facebook.com/mariam.sajaia.56?mibextid=wwXIfr&amp;rdid=ZRgiPMhYBktfUH7k&amp;share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CFEWJPUK3%2F%3Fmibextid%3DwwXIfr#" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Mariam's Facebook profile"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://x.com/mariamsss2121?s=11" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Mariam's X profile"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/mariam_s211?stkn=czh2YXMzZDc1bHNv&amp;utm_source=qr" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Mariam's Instagram profile"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/mariamsajaia1521" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Mariam's GitHub profile"><i class="fa-brands fa-github"></i></a>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright-text">&copy; 2026 <strong>Mariam Sajaia</strong> All Rights Reserved , Inc.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-backdrop" id="successModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalMessage" aria-hidden="true" hidden>
+        <div class="modal-content" tabindex="-1">
+            <button class="modal-close" id="modalCloseBtn" type="button" aria-label="Close dialog">&times;</button>
+            <div class="modal-icon-wrapper">
+                <div class="modal-icon-circle">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+            </div>
+            <h3 class="modal-title" id="modalTitle">Message Sent!</h3>
+            <p class="modal-message" id="modalMessage">
+                Thank you for getting in touch! We appreciate you contacting us.
+            </p>
+            <div class="modal-actions">
+                <button class="btn btn-primary modal-action-btn" id="modalOkBtn" type="button">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-lightbox" id="projectLightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle" aria-hidden="true" hidden>
+        <div class="project-lightbox-dialog" tabindex="-1">
+            <button class="project-lightbox-nav project-lightbox-prev" id="projectLightboxPrev" type="button" aria-label="Show previous project">
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <figure class="project-lightbox-content">
+                <div class="project-lightbox-toolbar">
+                    <button class="project-lightbox-close" id="projectLightboxClose" type="button" aria-label="Close project preview"></button>
+                </div>
+                <img src="" alt="" class="project-lightbox-image" id="projectLightboxImage">
+                <figcaption class="project-lightbox-caption">
+                    <div>
+                        <span class="project-lightbox-category" id="projectLightboxCategory"></span>
+                        <h2 class="project-lightbox-title" id="lightboxTitle"></h2>
+                    </div>
+                    <a class="project-lightbox-open" id="projectLightboxOpen" href="#" target="_blank" rel="noopener noreferrer">
+                        Open full size <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    </a>
+                </figcaption>
+            </figure>
+            <button class="project-lightbox-nav project-lightbox-next" id="projectLightboxNext" type="button" aria-label="Show next project">
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
     <script src="js/cv-preview.js"></script>
