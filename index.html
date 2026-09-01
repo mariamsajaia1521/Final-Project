@@ -415,6 +415,55 @@
             </div>
         </section>
 
+        <section class="contact-section section-padding" id="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title" id="contact-title">Contact Us</h2>
+                    <p class="section-subtitle">
+                        Have an exciting project or idea in mind? Get in touch and let's discuss it together.
+                    </p>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form id="contactForm" class="contact-form" aria-label="Contact Form">
+                        <div class="form-row-three">
+                            <div class="form-group">
+                                <label for="name" class="visually-hidden">Full Name</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Enter Your Name" autocomplete="name" minlength="2" required aria-required="true">
+                                <span class="error-msg" id="nameError" role="alert"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="visually-hidden">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="Enter Your Email" autocomplete="email" required aria-required="true">
+                                <span class="error-msg" id="emailError" role="alert"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="website" class="visually-hidden">Website URL</label>
+                                <input type="url" id="website" name="website" class="form-input" placeholder="Website URL" autocomplete="url" required aria-required="true">
+                                <span class="error-msg" id="websiteError" role="alert"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="visually-hidden">Your Message</label>
+                            <textarea id="message" name="message" class="form-input form-textarea" rows="6" minlength="10" placeholder="Enter Your Message" required aria-required="true"></textarea>
+                            <span class="error-msg" id="messageError" role="alert"></span>
+                        </div>
+
+                        <div class="form-submit-row text-center">
+                            <button type="submit" class="btn btn-primary btn-contact-submit" id="submitBtn">
+                                <span class="btn-text">Contact Me</span>
+                                <span class="btn-spinner"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
+                            </button>
+                        </div>
+                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <script src="js/main.js"></script>
