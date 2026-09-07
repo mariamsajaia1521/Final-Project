@@ -378,6 +378,46 @@ ul {
     transform: translateY(-2px);
 }
 
+.image-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    object-fit: contain;
+    vertical-align: middle;
+    filter: brightness(0) invert(1);
+}
+
+.social-icon .image-icon {
+    transition: filter var(--transition);
+}
+
+.social-icon:hover .image-icon,
+.social-icon:focus-visible .image-icon,
+.modal-icon-circle .image-icon {
+    filter: brightness(0) saturate(100%) invert(48%) sepia(99%) saturate(2446%) hue-rotate(359deg) brightness(101%) contrast(105%);
+}
+
+.modal-icon-circle .image-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.image-icon--loading {
+    animation: icon-spin 1s linear infinite;
+}
+
+@keyframes icon-spin {
+    to { transform: rotate(360deg); }
+}
+
+.service-icon img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
 .about-section {
     background-color: var(--bg-dark);
 }
@@ -893,7 +933,7 @@ ul {
     background: rgba(8, 8, 8, 0.94);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.25s ease, visibility 0.25s ease;
+    transition: opacity 0.25s ease;
 }
 
 .project-lightbox[hidden] {
@@ -1066,7 +1106,7 @@ ul {
     z-index: 2000;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .modal-backdrop[hidden] {
