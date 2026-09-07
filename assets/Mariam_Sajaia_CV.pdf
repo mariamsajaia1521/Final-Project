@@ -1,0 +1,69 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 961 >>
+stream
+BT
+/F1 24 Tf
+50 750 Td
+(Mariam Sajaia - UI/UX Designer) Tj
+0 -36 Td
+/F1 12 Tf
+(Email: mariam.sajaia.dev@example.com | Portfolio: Modern Web & UI/UX Specialist) Tj
+0 -30 Td
+/F1 16 Tf
+(Professional Summary) Tj
+0 -20 Td
+/F1 11 Tf
+(Passionate UI/UX and Web Designer with expertise in building responsive, modern, and user-centric interfaces.) Tj
+0 -15 Td
+(Proficient in Figma, Adobe Creative Suite, Design Systems, HTML5, CSS3, and JavaScript.) Tj
+0 -30 Td
+/F1 16 Tf
+(Core Competencies) Tj
+0 -20 Td
+/F1 11 Tf
+(- UI/UX Architecture & Prototyping) Tj
+0 -15 Td
+(- Responsive Web & Mobile Design) Tj
+0 -15 Td
+(- Design Systems, Typography & Visual Identity) Tj
+0 -15 Td
+(- Interactive Web Technologies & Accessibility) Tj
+0 -30 Td
+/F1 16 Tf
+(Key Projects) Tj
+0 -20 Td
+/F1 11 Tf
+(1. AirCalling Landing Page Design - SaaS Communications Platform) Tj
+0 -15 Td
+(2. GrowHub AI Business Telemetry Dashboard) Tj
+0 -15 Td
+(3. MODERN. Minimalist E-Commerce Web Experience) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000001253 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1323
+%%EOF
