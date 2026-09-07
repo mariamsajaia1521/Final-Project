@@ -285,10 +285,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentIndex = 0;
         let previouslyFocusedElement = null;
         let hideTimer = null;
+        let visibleCards = projectCards;
 
         function showProject(index) {
-            currentIndex = (index + projectCards.length) % projectCards.length;
-            const card = projectCards[currentIndex];
+            currentIndex = (index + visibleCards.length) % visibleCards.length;
+            const card = visibleCards[currentIndex];
             const sourceImage = card.querySelector('.project-image');
 
             lightboxImage.src = sourceImage.currentSrc || sourceImage.src;
@@ -301,13 +302,18 @@ document.addEventListener('DOMContentLoaded', () => {
         function open(index, trigger) {
             if (hideTimer !== null) window.clearTimeout(hideTimer);
 
+            visibleCards = projectCards.filter((card) => !card.hidden);
+            index = visibleCards.indexOf(projectCards[index]);
+            if (index < 0) return;
             previouslyFocusedElement = trigger;
             showProject(index);
             projectLightbox.hidden = false;
             projectLightbox.setAttribute('aria-hidden', 'false');
             window.requestAnimationFrame(() => {
                 projectLightbox.classList.add('active');
-                lightboxDialog.focus();
+                window.requestAnimationFrame(() => {
+                    if (projectLightbox.classList.contains('active')) lightboxDialog.focus();
+                });
             });
             syncPageScrollLock();
         }
@@ -318,7 +324,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             hideTimer = window.setTimeout(() => {
                 projectLightbox.hidden = true;
-                lightboxImage.removeAttribute('src');
                 syncPageScrollLock();
             }, 250);
 
@@ -370,7 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const firstElement = focusableElements[0];
             const lastElement = focusableElements[focusableElements.length - 1];
 
-            if (event.shiftKey && document.activeElement === firstElement) {
+            if (event.shiftKey && (document.activeElement === firstElement || document.activeElement === lightboxDialog)) {
                 event.preventDefault();
                 lastElement.focus();
             } else if (!event.shiftKey && document.activeElement === lastElement) {
@@ -399,7 +404,9 @@ document.addEventListener('DOMContentLoaded', () => {
             successModal.setAttribute('aria-hidden', 'false');
             window.requestAnimationFrame(() => {
                 successModal.classList.add('active');
-                modalContent?.focus();
+                window.requestAnimationFrame(() => {
+                    if (successModal.classList.contains('active')) modalContent?.focus();
+                });
             });
             syncPageScrollLock();
         }
@@ -407,7 +414,6 @@ document.addEventListener('DOMContentLoaded', () => {
         function close() {
             successModal.classList.remove('active');
             successModal.setAttribute('aria-hidden', 'true');
-            syncPageScrollLock();
 
             hideTimer = window.setTimeout(() => {
                 successModal.hidden = true;
@@ -439,7 +445,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const firstElement = focusableElements[0];
             const lastElement = focusableElements[focusableElements.length - 1];
 
-            if (event.shiftKey && document.activeElement === firstElement) {
+            if (event.shiftKey && (document.activeElement === firstElement || document.activeElement === modalContent)) {
                 event.preventDefault();
                 lastElement.focus();
             } else if (!event.shiftKey && document.activeElement === lastElement) {
@@ -463,6 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function setFieldError(field, message = '') {
             const errorElement = document.getElementById(`${field.id}Error`);
             field.classList.toggle('input-error', Boolean(message));
+            field.setAttribute('aria-invalid', String(Boolean(message)));
 
             if (errorElement) {
                 errorElement.textContent = message;
@@ -477,7 +484,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         contactForm.addEventListener('submit', async (event) => {
             event.preventDefault();
-            if (isSubmitting || !contactForm.checkValidity()) {
+            if (isSubmitting) return;
+            fields.forEach((field) => { field.value = field.value.trim(); });
+            if (!contactForm.checkValidity()) {
                 contactForm.reportValidity();
                 return;
             }
